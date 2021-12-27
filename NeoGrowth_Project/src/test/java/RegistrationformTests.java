@@ -50,6 +50,7 @@ public class RegistrationformTests extends BaseClass {
 		Assert.assertTrue(true);;
 	}
 	
+	//Okayfile
 	@Test
 	public void EnterNumber() {
 		RF = new Registerform();
