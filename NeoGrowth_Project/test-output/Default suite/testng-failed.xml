@@ -6,7 +6,7 @@
       <class name="RegistrationformTests">
         <methods>
           <include name="loadconfig"/>
-          <include name="FullFormwithNO"/>
+          <include name="ValidMobile"/>
           <include name="setup"/>
         </methods>
       </class> <!-- RegistrationformTests -->
