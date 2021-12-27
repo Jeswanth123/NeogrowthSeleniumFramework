@@ -301,5 +301,17 @@ public class RegistrationformTests extends BaseClass {
 		RF.SubmitBtn();
 	}
 	
+	@Test
+	public void ValidMobile() {
+		RF = new Registerform();
+	    RF.validatePhoneNumber("ABCD8899887766");
+	}
+	
+	@Test
+	public void ValidMobile1() {
+		RF = new Registerform();
+	    RF.validatePhoneNumber("1234567890");
+	}
+	
 	
 }

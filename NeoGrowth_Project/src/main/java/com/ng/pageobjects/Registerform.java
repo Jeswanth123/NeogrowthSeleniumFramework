@@ -2,12 +2,18 @@ package com.ng.pageobjects;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.annotation.RegEx;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 import com.ng.base.BaseClass;
 
 public class Registerform extends BaseClass {
@@ -372,10 +378,33 @@ public class Registerform extends BaseClass {
         {
      	 Assert.assertTrue((actualIndusDropDownValues.get(i).getText().equals(expectedIndusDropDownValues.get(i))));
        }
-
+    }
    
-    
-}
+    public void validatePhoneNumber(String Numm)
+    {
+    	PhoneNumber.click();
+    	PhoneNumber.sendKeys(Numm);
+    	//String MobileNumber_Regex = "^[6-9]{1}[0-9]{9}$";
+    	String MobileNumber_Regex = "^[0-9]{10}$";
+    	//String MobileNumber_Regex = "numFound=\"([0-9]+)\"";
+    	Pattern pattern = Pattern.compile(MobileNumber_Regex) ;
+    	
+    	Matcher matcher = pattern.matcher(Numm);
+    	Submit.click();
+    	 if (matcher.matches()) {
+    		 
+    		 Assert.assertTrue(true);
+    		 System.out.print("10 digits");
+    	 }
+    	 else
+    	 {
+    		 	
+    		    String Evalue = NumberError.getText();
+    	    	String Avalue = "Please enter a valid phone number";
+    		 Assert.assertEquals(Evalue, Avalue);
+    		 System.out.println(Numm +"Is NOT valid");
+    	 }
+    }
     
 
 		
