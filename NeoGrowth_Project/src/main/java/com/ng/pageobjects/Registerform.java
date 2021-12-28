@@ -5,15 +5,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.annotation.RegEx;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 import com.ng.base.BaseClass;
 
 public class Registerform extends BaseClass {
@@ -112,28 +109,12 @@ public class Registerform extends BaseClass {
 			
 	}
 	
-	public void VerifyEmail() {
-		if(EmailError.isDisplayed()== true) {
-		String E1 =EmailError.getText();
-		String AsendEmail = "Please enter a valid email address";
-		if(E1.equals(AsendEmail))
-			Assert.assertTrue(true);
-		else 
-			Assert.assertTrue(false);
-		}
-		else
-			Assert.assertTrue(true);
-	}
-		
 	public void selectCity(String CityName) {
 		City.click();
 		Select select = new Select(City);
 		select.selectByValue(CityName);
 	}
 	
-	public void Cityy() {
-		City.click();
-	}
 	public void selectExperienec(int value) {
 		BusinessExp.click();
 		Select select = new Select(BusinessExp);
@@ -150,6 +131,19 @@ public class Registerform extends BaseClass {
 		BusinessIndustry.click();
 		Select select = new Select(BusinessIndustry);
 		select.selectByValue(Name);
+	}
+	
+	public void Cardsales(String cards) {
+		Monthlycard.click();
+		Select select = new Select(Monthlycard);
+		select.selectByVisibleText(cards); 
+		
+	}
+	
+	public void PaymentOption(int value) {
+		AcceptingPayment.click();
+		Select select = new Select(AcceptingPayment);
+		select.selectByIndex(value);
 	}
 	
 	public void CityErrorMsg() {
@@ -195,45 +189,12 @@ public class Registerform extends BaseClass {
 		String IndustryErrorMsg = IndustryError.getText();
 		String AIndustryError = "Select your option";
 		Assert.assertEquals(IndustryErrorMsg, AIndustryError);
-	}
-	
-	public boolean DigitalPaymentYesClick() {
-	    DigitalPaymentYes.click();
-	    return DigitalPaymentYes.isSelected();
-	}
-	
-	public boolean DigitalpaymentNoClick() {
-		return DigitalPaymentNo.isSelected();
-	}
-	
-	public boolean DefaultCheckBox() {
-		return CheckBox.isSelected();
-	}
-	
-	public void Textpresentvalidation() {
-	  String OText = Textpresent.getText();
-	  String AText = "Do you accept digital payment (Credit Card/ UPI/ IMPS/ Wallets) ?*";
-	  Assert.assertEquals(OText, AText);
-	}
-	
-	public void Cardsales(String cards) {
-		
-		Monthlycard.click();
-		Select select = new Select(Monthlycard);
-		select.selectByVisibleText(cards); 
-		
-	}
+	}	
 	
 	public void CardsalesError() {
 		String CardsSalesErrormsg = CardError.getText();
 		String ACardsSalesErrormsg = "Select your option";
 		Assert.assertEquals(CardsSalesErrormsg, ACardsSalesErrormsg);
-	}
-	
-	public void PaymentOption(int value) {
-		AcceptingPayment.click();
-		Select select = new Select(AcceptingPayment);
-		select.selectByIndex(value);
 	}
 	
 	public void PaymentOptionError() {
@@ -244,6 +205,7 @@ public class Registerform extends BaseClass {
 		
 	public void citycountvalues() {
 		
+		City.click();
 		 @SuppressWarnings("serial")
 		List<String> expectedDropDownValues = new ArrayList <String>()
          { 
@@ -298,6 +260,8 @@ public class Registerform extends BaseClass {
 	}
 	
 	public void BExpValues() {
+		
+	BusinessExp.click();
 	@SuppressWarnings("serial")
 	List<String> expectedExpDropDownValues = new ArrayList <String>()
     { 
@@ -309,28 +273,45 @@ public class Registerform extends BaseClass {
    	
        } 
     };
-    //Good
+    
     Select ActualExpValues = new Select (BusinessExp);
     List<WebElement> actualExpDropDownValues = ActualExpValues.getOptions();
     
     for(int i=0;i<actualExpDropDownValues.size();i++)
-    /*{
-   	   
-        if(actualExpDropDownValues.get(i).getText().equals(expectedExpDropDownValues.get(i))){
-         
-         System.out.println("Value Matching :"+"Actual List Value="+actualExpDropDownValues.get(i).getText()+" And Expected Value="+expectedExpDropDownValues.get(i));
-        }else {
-         System.out.println("Value Not Matching :"+"Actual List Value="+actualExpDropDownValues.get(i).getText()+" And Expected Value="+expectedExpDropDownValues.get(i));
-        }
-     }*/
     {
   	 Assert.assertTrue((actualExpDropDownValues.get(i).getText().equals(expectedExpDropDownValues.get(i))));
    }
 	}
 	
-	//Okay
+	public void AvgmonthlyValues() {
+		
+		MonthlySale.click();
+		@SuppressWarnings("serial")
+		List<String> expectedMonDropDownValues = new ArrayList <String>()
+	    { 
+	       { 
+	    	add("Your Average Monthly Sale*");
+	       	add("Less than 1 lakh");
+	   		add("Between 1 to 3 lakhs");
+	   		add("Between 3 to 5 lakhs");
+	   		add("More than 5 lakhs");
+	   	
+	       } 
+	    };
+	    
+	    Select ActualMonValues = new Select (MonthlySale);
+	    List<WebElement> actualMonDropDownValues = ActualMonValues.getOptions();
+	    
+	    for(int i=0;i<actualMonDropDownValues.size();i++)
+	    {
+	      Assert.assertTrue((actualMonDropDownValues.get(i).getText().equals(expectedMonDropDownValues.get(i))));
+	  }
+		}
+		
     
     public void BIndustryValues() {
+    	
+    	BusinessIndustry.click();
     	@SuppressWarnings("serial")
     	List<String> expectedIndusDropDownValues = new ArrayList <String>()
         { 
@@ -368,45 +349,107 @@ public class Registerform extends BaseClass {
         List<WebElement> actualIndusDropDownValues = ActualBusIndusValues.getOptions();
         
         for(int i=0;i<actualIndusDropDownValues.size();i++)
-       /* {
-       	   
-            if(actualIndusDropDownValues.get(i).getText().equals(expectedIndusDropDownValues.get(i))){
-             
-             System.out.println("Value Matching :"+"Actual List Value="+actualIndusDropDownValues.get(i).getText()+" And Expected Value="+expectedIndusDropDownValues.get(i));
-            }else {
-             System.out.println("Value Not Matching :"+"Actual List Value="+actualIndusDropDownValues.get(i).getText()+" And Expected Value="+expectedIndusDropDownValues.get(i));
-            }
-         }*/
         {
      	 Assert.assertTrue((actualIndusDropDownValues.get(i).getText().equals(expectedIndusDropDownValues.get(i))));
        }
     }
    
+    public boolean DigitalPaymentYesClick() {
+	    DigitalPaymentYes.click();
+	    return DigitalPaymentYes.isSelected();
+	}
+	
+	public boolean DigitalpaymentNoClick() {
+		return DigitalPaymentNo.isSelected();
+	}
+	
+	public boolean DefaultCheckBox() {
+		return CheckBox.isSelected();
+	}
+	
+	public void Textpresentvalidation() {
+		  String OText = Textpresent.getText();
+		  String AText = "Do you accept digital payment (Credit Card/ UPI/ IMPS/ Wallets) ?*";
+		  Assert.assertEquals(OText, AText);
+	}
+	
     public void validatePhoneNumber(String Numm)
     {
     	PhoneNumber.click();
     	PhoneNumber.sendKeys(Numm);
-    	//String MobileNumber_Regex = "^[6-9]{1}[0-9]{9}$";
-    	String MobileNumber_Regex = "^[0-9]{10}$";
-    	//String MobileNumber_Regex = "numFound=\"([0-9]+)\"";
+    	String MobileNumber_Regex = "^[6-9]{1}[0-9]{9}$";
+    	//String MobileNumber_Regex = "^[0-9]{10}$";
     	Pattern pattern = Pattern.compile(MobileNumber_Regex) ;
-    	
-    	Matcher matcher = pattern.matcher(Numm);
+    	Matcher matcher = pattern.matcher(Numm); 
     	Submit.click();
+		
     	 if (matcher.matches()) {
     		 
     		 Assert.assertTrue(true);
-    		 System.out.print("10 digits");
+    		 
     	 }
     	 else
     	 {
-    		 	
-    		    String Evalue = NumberError.getText();
-    	    	String Avalue = "Please enter a valid phone number";
-    		 Assert.assertEquals(Evalue, Avalue);
-    		 System.out.println(Numm +"Is NOT valid");
+    		 String ANumErrormsg = NumberError.getText();
+    		 String ENumErrormsg = "Please enter a valid phone number";
+    		 Assert.assertEquals(ANumErrormsg, ENumErrormsg);
+    		 System.out.print("Phone number error message is checked");
+    		 
     	 }
     }
+    
+    public void ValidateCharNumber(String Nummber) {
+    	PhoneNumber.click();
+        PhoneNumber.sendKeys(Nummber);
+    	String val = PhoneNumber.getAttribute("value");
+    	String numberOnly= Nummber.replaceAll("[^0-9]", "");
+    	Assert.assertEquals(numberOnly, val);
+    	//System.out.println(numberOnly+"This is Expected");
+    	//System.out.println(val+"Actual");
+    	
+    }
+    
+    public void validateName(String Namme) {
+    	
+	 	FullName.click();
+	 	FullName.sendKeys(Namme);
+    	String Nameid_Regex ="^[A-Z ]{1}[A-Za-z ]{6,}$";
+    	Pattern pattern = Pattern.compile(Nameid_Regex) ;
+    	Matcher matcher = pattern.matcher(Namme); 
+    	Submit.click();
+    		if (matcher.matches()) {
+    		 
+    		 Assert.assertTrue(true);
+    		 
+    	 }
+    	 else
+    	 {
+    		 String ANameErrormsg = NameError.getText();
+    		 String ENameErrormsg = "Please enter your name";
+    		 Assert.assertEquals(ANameErrormsg, ENameErrormsg);
+    		 System.out.print("Name error message is checked");
+    		 
+    	 }
+ } 
+    public void validateEmailId(String Id) {
+    	
+    	Email.click();
+    	Email.sendKeys(Id);
+    	String Emailid_Regex ="^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
+    	Pattern pattern = Pattern.compile(Emailid_Regex) ;
+    	Matcher matcher = pattern.matcher(Id);
+    	Submit.click();
+    	if (matcher.matches()) {
+    		Assert.assertTrue(true);
+    	}
+    	else {
+    		 String AEmailErrormsg = EmailError.getText();
+    		 String EEmailErrormsg = "Please enter a valid email address";
+    		 Assert.assertEquals(AEmailErrormsg, EEmailErrormsg);
+    		 System.out.print("Email error message is checked");
+    	}
+    }
+    
     
 
 		

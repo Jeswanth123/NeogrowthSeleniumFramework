@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="19" total="20" passed="0" failed="1" skipped="0">
+<testng-results ignored="42" total="43" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-27T20:39:54 IST" name="Default suite" finished-at="2021-12-27T20:40:05 IST" duration-ms="10598">
+  <suite started-at="2021-12-29T00:56:57 IST" name="Default suite" finished-at="2021-12-29T00:57:06 IST" duration-ms="8388">
     <groups>
     </groups>
-    <test started-at="2021-12-27T20:39:54 IST" name="Default test" finished-at="2021-12-27T20:40:05 IST" duration-ms="10598">
+    <test started-at="2021-12-29T00:56:57 IST" name="Default test" finished-at="2021-12-29T00:57:06 IST" duration-ms="8388">
       <class name="RegistrationformTests">
-        <test-method is-config="true" signature="loadconfig()[pri:0, instance:RegistrationformTests@54a7079e]" started-at="2021-12-27T20:39:54 IST" name="loadconfig" finished-at="2021-12-27T20:39:54 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="loadconfig()[pri:0, instance:RegistrationformTests@54e1c68b]" started-at="2021-12-29T00:56:57 IST" name="loadconfig" finished-at="2021-12-29T00:56:57 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadconfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:RegistrationformTests@54a7079e]" started-at="2021-12-27T20:39:54 IST" name="setup" finished-at="2021-12-27T20:40:04 IST" duration-ms="9370" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:RegistrationformTests@54e1c68b]" started-at="2021-12-29T00:56:57 IST" name="setup" finished-at="2021-12-29T00:57:04 IST" duration-ms="6838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ValidMobile()[pri:0, instance:RegistrationformTests@54a7079e]" started-at="2021-12-27T20:40:04 IST" name="ValidMobile" finished-at="2021-12-27T20:40:05 IST" duration-ms="1152" status="FAIL">
+        <test-method signature="ValidateName4()[pri:0, instance:RegistrationformTests@54e1c68b]" started-at="2021-12-29T00:57:04 IST" name="ValidateName4" finished-at="2021-12-29T00:57:05 IST" duration-ms="1168" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//em[@id='phone_mobile-error']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//em[@id='first_name-error']"}
   (Session info: chrome=96.0.4664.110)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.0', revision: '87802e897b'
-System info: host: 'MAA-5CG9353VSB', ip: '11.144.96.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'MAA-5CG9353VSB', ip: '11.144.22.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5670a0a2c8497cf03f3ff7531b14b702, findElement {using=xpath, value=//em[@id='phone_mobile-error']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\jeswanr\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52953}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52953/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5670a0a2c8497cf03f3ff7531b14b702]]>
+Command: [68c71f5d14d09558d0a81c25be01da35, findElement {using=xpath, value=//em[@id='first_name-error']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\jeswanr\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61374}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61374/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 68c71f5d14d09558d0a81c25be01da35]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//em[@id='phone_mobile-error']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//em[@id='first_name-error']"}
   (Session info: chrome=96.0.4664.110)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.0', revision: '87802e897b'
-System info: host: 'MAA-5CG9353VSB', ip: '11.144.96.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'MAA-5CG9353VSB', ip: '11.144.22.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5670a0a2c8497cf03f3ff7531b14b702, findElement {using=xpath, value=//em[@id='phone_mobile-error']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\jeswanr\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52953}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52953/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5670a0a2c8497cf03f3ff7531b14b702
+Command: [68c71f5d14d09558d0a81c25be01da35, findElement {using=xpath, value=//em[@id='first_name-error']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\jeswanr\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61374}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61374/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 68c71f5d14d09558d0a81c25be01da35
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -56,9 +56,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy16.getText(Unknown Source)
-at com.ng.pageobjects.Registerform.validatePhoneNumber(Registerform.java:402)
-at RegistrationformTests.ValidMobile(RegistrationformTests.java:307)
+at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
+at com.ng.pageobjects.Registerform.validateName(Registerform.java:427)
+at RegistrationformTests.ValidateName4(RegistrationformTests.java:540)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -92,7 +92,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidMobile -->
+        </test-method> <!-- ValidateName4 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:RegistrationformTests@54e1c68b]" started-at="2021-12-29T00:57:05 IST" name="teardown" finished-at="2021-12-29T00:57:06 IST" duration-ms="310" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- RegistrationformTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

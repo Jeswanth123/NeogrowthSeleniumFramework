@@ -5,8 +5,9 @@
     <classes>
       <class name="RegistrationformTests">
         <methods>
+          <include name="ValidateName4"/>
           <include name="loadconfig"/>
-          <include name="ValidMobile"/>
+          <include name="teardown"/>
           <include name="setup"/>
         </methods>
       </class> <!-- RegistrationformTests -->
